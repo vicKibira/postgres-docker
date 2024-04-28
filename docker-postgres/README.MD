@@ -1,34 +1,9 @@
-URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+**Overview**
 
-python ingest_data.py \
-  --user=root \
-  --password=root \
-  --host=localhost \
-  --port=5432 \
-  --db=ny_taxi \
-  --table_name=yellow_taxi_trips \
-  --url=${URL}
+This project is a simple data loading pipeline developed in Python, leveraging PostgreSQL and Docker. It is designed to load data in CSV and Parquet formats from an API endpoint into a PostgreSQL database. The project uses Docker to containerize the application environment and PostgreSQL for data storage.
 
-URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+**Requirements**
 
-docker run -it \
-  --network=pg-network \
-  taxi_ingest:v001 \
-    --user=root \
-    --password=root \
-    --host=pg-database \
-    --port=5432 \
-    --db=ny_taxi \
-    --table_name=yellow_taxi_trips \
-    --url=${URL}
-
-
-    docker run -it \
-  -e POSTGRES_USER="root" \
-  -e POSTGRES_PASSWORD="root" \
-  -e POSTGRES_DB="ny_taxi" \
-  -v c:/Users/alexe/git/data-engineering-zoomcamp/week_1_basics_n_setup/2_docker_sql/ny_taxi_postgres_data:/var/lib/postgresql/data \
-  -p 5432:5432 \
-  --network=pg-network \
-  --name pg-database \
-  postgres:13
+- Python 3.x
+- Docker
+- PostgreSQL
