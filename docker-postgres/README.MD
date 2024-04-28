@@ -4,8 +4,6 @@ This project is a simple data loading pipeline developed in Python, leveraging P
 
 **Requirements**
 
-Python 3.x
-
-Docker
-
-PostgreSQL
+- Python 3.x
+- Docker
+- PostgreSQL
